@@ -1,5 +1,6 @@
 -- Task 1
 CREATE DATABASE Minions
+GO
 
 -- Task 2
 CREATE TABLE Minions

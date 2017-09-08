@@ -1,5 +1,6 @@
 -- Task 14
 CREATE DATABASE CarRental
+GO
 USE CarRental
 
 CREATE TABLE Categories

@@ -1,5 +1,6 @@
 -- Task 15
 CREATE DATABASE Hotel
+GO
 USE Hotel
 
 CREATE TABLE Employees 

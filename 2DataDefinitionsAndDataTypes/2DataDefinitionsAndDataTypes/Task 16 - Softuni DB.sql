@@ -1,5 +1,6 @@
 -- Task 16
 CREATE DATABASE SoftUni
+GO
 USE SoftUni
 
 CREATE TABLE Towns

@@ -1,5 +1,6 @@
 -- Task 13
 CREATE DATABASE Movies
+GO
 USE Movies
 
 CREATE TABLE Directors
