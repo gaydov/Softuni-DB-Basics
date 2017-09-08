@@ -29,7 +29,7 @@ MiddleName varchar(20),
 LastName varchar(20) NOT NULL,
 JobTitle varchar (50) NOT NULL,
 DepartmentId int FOREIGN KEY REFERENCES Departments(Id) NOT NULL,
-HireDate varchar(20),
+HireDate date,
 Salary decimal (7,2), 
-AddressId int FOREIGN KEY REFERENCES Addresses(Id) NOT NULL
+AddressId int FOREIGN KEY REFERENCES Addresses(Id)
 )

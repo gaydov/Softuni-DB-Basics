@@ -56,9 +56,9 @@ TankLevel int NOT NULL,
 KilometrageStart int NOT NULL,
 KilometrageEnd int NOT NULL,
 TotalKilometrage AS KilometrageEnd - KilometrageStart,
-StartDate varchar(20),
-EndDate varchar(20),
-TotalDays int,
+StartDate date,
+EndDate date,
+TotalDays AS datediff(day, StartDate, EndDate),
 RateApplied decimal (7,2),
 TaxRate decimal (7,2),
 OrderStatus varchar(20),
@@ -89,8 +89,8 @@ VALUES
 ('432k21dasda4j32kj', 'Joro Georgiev','Mladost 3', 'Sofia', '1333'),
 ('adad2', 'Maria Atanasova','Drujba 2', 'Sofia', '1211134')
 
-INSERT INTO RentalOrders(EmployeeId, CustomerId, CarId, TankLevel, KilometrageStart, KilometrageEnd)
+INSERT INTO RentalOrders(EmployeeId, CustomerId, CarId, TankLevel, KilometrageStart, KilometrageEnd, StartDate, EndDate)
 VALUES
-(1, 1, 1, 30, 112000, 115000),
-(2, 2, 2, 38, 121000, 130000),
-(3, 3, 3, 40, 95000, 115000)
+(1, 1, 1, 30, 112000, 115000, '2016-05-20', '2016-05-24'),
+(2, 2, 2, 38, 121000, 130000, '2017-01-03', '2017-05-03'),
+(3, 3, 3, 40, 95000, 115000, '2016-11-11', '2016-11-20')

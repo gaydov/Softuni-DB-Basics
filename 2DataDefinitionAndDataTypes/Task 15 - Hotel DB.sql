@@ -46,7 +46,6 @@ VALUES
 ('Dirty'),
 ('Unavailable')
 
-
 CREATE TABLE RoomTypes
 (
 RoomType varchar(20) PRIMARY KEY NOT NULL,
@@ -91,11 +90,11 @@ CREATE TABLE Payments
 (
 Id int PRIMARY KEY IDENTITY,
 EmployeeId int FOREIGN KEY REFERENCES Employees(Id) NOT NULL,
-PaymentDate varchar(20) NOT NULL,
+PaymentDate date NOT NULL,
 AccountNumber int FOREIGN KEY REFERENCES Customers(AccountNumber) NOT NULL,
-FirstDateOccupied varchar(20),
-LastDateOccupied varchar(20),
-TotalDays int NOT NULL,
+FirstDateOccupied date,
+LastDateOccupied date,
+TotalDays AS datediff(day, FirstDateOccupied, LastDateOccupied),
 AmmountCharged decimal (7,2) NOT NULL,
 TaxRate decimal (7,2),
 TaxAmount decimal (7,2),
@@ -103,17 +102,17 @@ PaymentTotal decimal (7,2),
 Notes varchar(max)
 )
 
-INSERT INTO Payments (EmployeeId, PaymentDate, AccountNumber, TotalDays, AmmountCharged)
+INSERT INTO Payments (EmployeeId, PaymentDate, AccountNumber, FirstDateOccupied, LastDateOccupied, AmmountCharged)
 VALUES
-(1, '21/03/2016', 1, 7, 666.45),
-(2, '11/04/2006', 2, 10, 1444.45),
-(3, '26/08/2017', 3, 4, 166.45)
+(1, '2016-03-21', 1,'2016-03-22', '2016-03-27', 666.45),
+(2, '2006-04-11', 2, '2006-04-12', '2006-04-22', 1444.45),
+(3, '2017-08-26', 3, '2017-08-26', '2017-08-29', 166.45)
 
 CREATE TABLE Occupancies 
 (
 Id int PRIMARY KEY IDENTITY,
 EmployeeId int FOREIGN KEY REFERENCES Employees(Id) NOT NULL,
-DateOccupied varchar(20),
+DateOccupied date,
 AccountNumber int FOREIGN KEY REFERENCES Customers(AccountNumber) NOT NULL,
 RoomNumber int FOREIGN KEY REFERENCES Rooms(RoomNumber),
 RateApplied decimal (7,2) NOT NULL,
