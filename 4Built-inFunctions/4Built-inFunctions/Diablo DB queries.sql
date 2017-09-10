@@ -1,9 +1,9 @@
 USE Diablo
 
 -- Games From 2011 and 2012 Year
-SELECT TOP (50) Name, FORMAT(Start, 'yyyy-MM-dd') 
+SELECT TOP 50 Name, FORMAT(Start, 'yyyy-MM-dd') AS [Start date]
 FROM Games
-WHERE DATEPART(year, Start) in ('2011', '2012')
+WHERE DATEPART(year, Start) in (2011, 2012)
 ORDER BY Start, Name
 
 -- User Email Providers
