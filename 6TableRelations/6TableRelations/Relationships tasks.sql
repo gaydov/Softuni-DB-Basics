@@ -3,15 +3,15 @@ USE People
 
 CREATE TABLE Persons
 (
-PersonID int IDENTITY,
+PersonID int IDENTITY NOT NULL,
 FirstName varchar(50),
 Salary decimal(7, 2),
-PassportID int UNIQUE
+PassportID int UNIQUE NOT NULL
 )
 
 CREATE TABLE Passports
 (
-PassportID int UNIQUE,
+PassportID int NOT NULL,
 PassportNumber varchar(50)
 )
 
@@ -29,6 +29,9 @@ VALUES
 
 ALTER TABLE Persons
 ADD CONSTRAINT PK_Persons PRIMARY KEY (PersonID)
+
+ALTER TABLE Passports
+ADD CONSTRAINT PK_Passports PRIMARY KEY (PassportID)
 
 ALTER TABLE Persons
 ADD CONSTRAINT FK_Persons_Passports
