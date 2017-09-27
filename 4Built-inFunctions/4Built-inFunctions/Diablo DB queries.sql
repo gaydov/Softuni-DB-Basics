@@ -4,7 +4,7 @@ USE Diablo
 SELECT TOP 50 Name, FORMAT(Start, 'yyyy-MM-dd') AS [Start date]
 FROM Games
 WHERE DATEPART(year, Start) in (2011, 2012)
-ORDER BY Start, Name
+ORDER BY [Start date], Name
 
 -- User Email Providers
 SELECT Username, SUBSTRING(Email, CHARINDEX('@', Email) + 1, LEN(Email)) AS [Email Provider]
