@@ -47,3 +47,15 @@ SELECT DepartmentID,
 FROM Employees e
 WHERE (SELECT DISTINCT Salary FROM Employees WHERE DepartmentID = e.DepartmentID ORDER BY Salary DESC OFFSET 2 ROWS FETCH NEXT 1 ROWS ONLY) IS NOT NULL
 GROUP BY DepartmentID
+
+-- Salary Challenge
+SELECT TOP(10) e.FirstName, e.LastName, e.DepartmentID
+FROM Employees AS e
+WHERE e.Salary >(SELECT AVG(e2.Salary)
+				FROM Employees AS e2
+				WHERE e.DepartmentID = e2.DepartmentID
+				)
+ORDER BY e.DepartmentID
+
+
+					
