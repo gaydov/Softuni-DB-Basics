@@ -17,9 +17,9 @@ VALUES
 ('John', '2010-01-06 ')
 
 SELECT 
-Name, 
-DATEDIFF(year, Birthdate, GETDATE()) AS [Age in Years],
-DATEDIFF(month, Birthdate, GETDATE()) AS [Age in Months],
-DATEDIFF(day, Birthdate, GETDATE()) AS [Age in Days],
-DATEDIFF(minute, Birthdate, GETDATE()) AS [Age in Minutes]
+	Name, 
+	DATEDIFF(year, Birthdate, GETDATE()) AS [Age in Years],
+	DATEDIFF(month, Birthdate, GETDATE()) AS [Age in Months],
+	DATEDIFF(day, Birthdate, GETDATE()) AS [Age in Days],
+	DATEDIFF(minute, Birthdate, GETDATE()) AS [Age in Minutes]
 FROM People
