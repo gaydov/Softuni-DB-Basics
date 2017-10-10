@@ -139,9 +139,10 @@ CREATE PROCEDURE usp_AssignProject(@emloyeeId int, @projectID int)
 AS
 BEGIN TRANSACTION
 
-DECLARE @currentEmpProjectsCount int = (SELECT COUNT(ProjectID)
-										FROM EmployeesProjects
-										WHERE EmployeeID = @emloyeeId)
+DECLARE @currentEmpProjectsCount int = 
+(SELECT COUNT(ProjectID)
+FROM EmployeesProjects
+WHERE EmployeeID = @emloyeeId)
 
 IF(@currentEmpProjectsCount >= 3)
 BEGIN
