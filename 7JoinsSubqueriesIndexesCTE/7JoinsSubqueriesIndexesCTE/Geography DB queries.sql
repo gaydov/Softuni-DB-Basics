@@ -23,8 +23,8 @@ FROM Countries AS c
 LEFT OUTER JOIN CountriesRivers AS cr ON c.CountryCode = cr.CountryCode
 LEFT OUTER JOIN Rivers AS r ON cr.RiverId = r.Id
 WHERE c.ContinentCode = (SELECT con.ContinentCode 
-						FROM Continents AS con 
-						WHERE con.ContinentName = 'Africa')
+					FROM Continents AS con 
+					WHERE con.ContinentName = 'Africa')
 ORDER BY c.CountryName
 
 -- *Continents and Currencies
