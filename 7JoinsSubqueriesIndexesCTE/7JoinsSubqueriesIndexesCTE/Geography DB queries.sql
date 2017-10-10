@@ -52,7 +52,11 @@ GROUP BY c.CountryName
 ORDER BY [HighestPeakElevation] DESC, [LongestRiverLength] DESC, c.CountryName
 
 -- *Highest Peak Name and Elevation by Country
-SELECT TOP (5) WITH TIES c.CountryName, ISNULL(p.PeakName, '(no highest peak)') AS 'HighestPeakName', ISNULL(MAX(p.Elevation), 0) AS 'HighestPeakElevation', ISNULL(m.MountainRange, '(no mountain)')
+SELECT TOP (5) WITH TIES 
+	c.CountryName, 
+	ISNULL(p.PeakName, '(no highest peak)') AS [HighestPeakName], 
+	ISNULL(MAX(p.Elevation), 0) AS [HighestPeakElevation], 
+	ISNULL(m.MountainRange, '(no mountain)') AS [Mountain]
 FROM Countries AS c
 LEFT JOIN MountainsCountries AS mc
 ON c.CountryCode = mc.CountryCode
