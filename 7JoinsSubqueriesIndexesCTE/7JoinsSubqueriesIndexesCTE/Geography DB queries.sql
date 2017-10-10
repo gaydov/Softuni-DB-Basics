@@ -28,12 +28,12 @@ WHERE c.ContinentCode = (SELECT con.ContinentCode
 ORDER BY c.CountryName
 
 -- *Continents and Currencies
-SELECT rankedCurrencies.ContinentCode, rankedCurrencies.CurrencyCode, rankedCurrencies.Count
-FROM (
-SELECT c.ContinentCode, c.CurrencyCode, COUNT(c.CurrencyCode) AS [Count], DENSE_RANK() OVER (PARTITION BY c.ContinentCode ORDER BY COUNT(c.CurrencyCode) DESC) AS [rank] 
+SELECT rankedCurrencies.ContinentCode, rankedCurrencies.CurrencyCode, rankedCurrencies.[Count]
+FROM 
+(SELECT c.ContinentCode, c.CurrencyCode, COUNT(c.CurrencyCode) AS [Count], DENSE_RANK() OVER (PARTITION BY c.ContinentCode ORDER BY COUNT(c.CurrencyCode) DESC) AS [rank] 
 FROM Countries AS c
 GROUP BY c.ContinentCode, c.CurrencyCode) AS rankedCurrencies
-WHERE rankedCurrencies.rank = 1 and rankedCurrencies.Count > 1
+WHERE rankedCurrencies.[rank] = 1 and rankedCurrencies.[Count] > 1
 
 -- Countries Without any Mountains
 SELECT COUNT(c.CountryCode) AS [CountryCode]
@@ -42,7 +42,7 @@ LEFT OUTER JOIN MountainsCountries AS m ON c.CountryCode = m.CountryCode
 WHERE m.MountainId IS NULL
 
 -- Highest Peak and Longest River by Country
-SELECT TOP(5) c.CountryName, MAX(p.Elevation) AS [HighestPeakElevation], MAX(r.Length) AS [LongestRiverLength]
+SELECT TOP(5) c.CountryName, MAX(p.Elevation) AS [HighestPeakElevation], MAX(r.[Length]) AS [LongestRiverLength]
 FROM Countries AS c
 LEFT OUTER JOIN MountainsCountries AS mc ON c.CountryCode = mc.CountryCode
 LEFT OUTER JOIN Peaks AS p ON p.MountainId = mc.MountainId
