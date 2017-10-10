@@ -95,6 +95,9 @@ GO
 -- Delete Employees and Departments
 
 -- Creating table in which to store the IDs of the employees that need to be deleted:
+CREATE PROC usp_DeleteEmployeesFromDepartment (@departmentId INT)
+AS
+
 DECLARE @empIDsToBeDeleted TABLE
 (
 Id int
@@ -103,10 +106,7 @@ Id int
 INSERT INTO @empIDsToBeDeleted
 SELECT e.EmployeeID
 FROM Employees AS e
-INNER JOIN Departments AS d
-ON d.DepartmentID = e.DepartmentID
-WHERE d.Name IN ('Production', 'Production control')
-
+WHERE e.DepartmentID = @departmentId
 
 ALTER TABLE Departments
 ALTER COLUMN ManagerID int NULL
@@ -126,7 +126,12 @@ DELETE FROM Employees
 WHERE EmployeeID IN (SELECT Id FROM @empIDsToBeDeleted)
 
 DELETE FROM Departments
-WHERE Name IN ('Production', 'Production control')
+WHERE DepartmentID = @departmentId 
+
+SELECT COUNT(*) AS [Employees Count] FROM Employees AS e
+JOIN Departments AS d
+ON d.DepartmentID = e.DepartmentID
+WHERE e.DepartmentID = @departmentId
 
 -- Employees with Three Projects
 GO
