@@ -21,9 +21,9 @@ HAVING AVG(MagicWandSize) =
 (
 	SELECT MIN(WandSizesTable.AvgSizes)
 	FROM 
-	(	SELECT AVG(MagicWandSize) AS AvgSizes
-		FROM WizzardDeposits
-		GROUP BY DepositGroup
+	(SELECT AVG(MagicWandSize) AS AvgSizes
+	FROM WizzardDeposits
+	GROUP BY DepositGroup
 	) AS WandSizesTable
 )
 
