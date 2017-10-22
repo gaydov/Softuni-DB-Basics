@@ -11,30 +11,30 @@ WHERE r.StatusId IN (SELECT Id FROM [Status] WHERE Label IN ('waiting', 'in prog
 SELECT  c.[Name] AS [Category Name], 
 		COUNT(r.Id) AS [Reports Number], 
 		[Main Status] =
-						CASE
-							WHEN (SELECT COUNT(cte.[Category Name])
-								  FROM   CTE_FilteredCategories AS cte 
-								  WHERE  cte.Label = 'in progress' 
-								  AND    cte.[Category Name] = c.[Name]) 
-								 > 
-								 (SELECT COUNT(cte.[Category Name])
-								  FROM   CTE_FilteredCategories AS cte 
-								  WHERE  cte.Label = 'waiting' 
-								  AND    cte.[Category Name] = c.[Name])
-							THEN 'in progress'
+				CASE
+					WHEN (SELECT COUNT(cte.[Category Name])
+						  FROM   CTE_FilteredCategories AS cte 
+						  WHERE  cte.Label = 'in progress' 
+						  AND    cte.[Category Name] = c.[Name]) 
+						 > 
+						 (SELECT COUNT(cte.[Category Name])
+						  FROM   CTE_FilteredCategories AS cte 
+						  WHERE  cte.Label = 'waiting' 
+						  AND    cte.[Category Name] = c.[Name])
+					THEN 'in progress'
 
-							WHEN (SELECT COUNT(cte.[Category Name])
-								  FROM   CTE_FilteredCategories AS cte 
-								  WHERE  cte.Label = 'in progress' 
-								  AND    cte.[Category Name] = c.[Name]) 
-								  < 
-								 (SELECT COUNT(cte.[Category Name])
-								  FROM   CTE_FilteredCategories AS cte 
-								  WHERE  cte.Label = 'waiting' 
-								  AND    cte.[Category Name] = c.[Name])
-							THEN 'waiting'
-							ELSE 'equal'
-						END 
+					WHEN (SELECT COUNT(cte.[Category Name])
+						  FROM   CTE_FilteredCategories AS cte 
+						  WHERE  cte.Label = 'in progress' 
+						  AND    cte.[Category Name] = c.[Name]) 
+						  < 
+						 (SELECT COUNT(cte.[Category Name])
+						  FROM   CTE_FilteredCategories AS cte 
+						  WHERE  cte.Label = 'waiting' 
+						  AND    cte.[Category Name] = c.[Name])
+					THEN 'waiting'
+					ELSE 'equal'
+				END 
 FROM Categories AS c
 INNER JOIN Reports AS r ON r.CategoryId = c.Id
 WHERE r.StatusId IN (SELECT Id FROM [Status] WHERE Label IN ('waiting', 'in progress'))
