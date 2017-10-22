@@ -28,7 +28,7 @@ SELECT  c.[Name] AS [Category Name],
 					      WHERE cte.Label = 'in progress' 
 					      AND cte.[Category Name] = c.[Name]) 
 					      < 
-						 (SELECT COUNT(cte.[Category Name])
+					      (SELECT COUNT(cte.[Category Name])
 					      FROM CTE_FilteredCategories AS cte 
 					      WHERE cte.Label = 'waiting' 
 					      AND cte.[Category Name] = c.[Name])
