@@ -2,7 +2,7 @@
  SELECT [EmpName],
         CONCAT(Closed, '/', Opened) AS [Closed Open Reports]
   FROM (SELECT CONCAT(e.FirstName, ' ' ,e.LastName) AS [EmpName],
-        e.Id AS EmpId,
+		e.Id AS EmpId,
 		COUNT(r.CloseDate) AS Closed,
 		COUNT(r.OpenDate) AS Opened
 		FROM Employees AS e
