@@ -7,9 +7,9 @@ BEGIN TRANSACTION
 					     WHERE  Id = @employeeId);
  					   
 	DECLARE @reportDepartmentId int = (SELECT c.DepartmentId
-				   FROM   Reports AS r
-				   INNER JOIN Categories AS c ON c.Id = r.CategoryId
-				   WHERE r.Id = @reportId)
+				      FROM   Reports AS r
+				      INNER JOIN Categories AS c ON c.Id = r.CategoryId
+				      WHERE r.Id = @reportId)
 
 	IF(@employeeDepartmentId = @reportDepartmentId)
 	BEGIN
