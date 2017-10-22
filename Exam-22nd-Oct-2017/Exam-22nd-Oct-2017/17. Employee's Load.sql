@@ -4,9 +4,9 @@ AS
 BEGIN
 
 	DECLARE @assignedReportsCount INT = (SELECT ISNULL(COUNT(Id), 0)
-					FROM Reports
-					WHERE EmployeeId = @employeeId
-					AND StatusId = @statusId)
+						FROM Reports
+						WHERE EmployeeId = @employeeId
+						AND StatusId = @statusId)
 	
 	RETURN @assignedReportsCount;
 
