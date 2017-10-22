@@ -13,9 +13,9 @@ SELECT  c.[Name] AS [Category Name],
 		[Main Status] =
 				CASE
 					WHEN (SELECT COUNT(cte.[Category Name])
-					  FROM CTE_FilteredCategories AS cte 
-					  WHERE cte.Label = 'in progress' 
-					  AND cte.[Category Name] = c.[Name]) 
+					 FROM CTE_FilteredCategories AS cte 
+					 WHERE cte.Label = 'in progress' 
+					 AND cte.[Category Name] = c.[Name]) 
 						 > 
 						 (SELECT COUNT(cte.[Category Name])
 						  FROM   CTE_FilteredCategories AS cte 
