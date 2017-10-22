@@ -3,11 +3,11 @@ AS
 BEGIN TRANSACTION
 
 	DECLARE @employeeDepartmentId int = (SELECT DepartmentId
-					     FROM   Employees
-					     WHERE  Id = @employeeId);
+					     FROM Employees
+					     WHERE Id = @employeeId);
  					   
 	DECLARE @reportDepartmentId int = (SELECT c.DepartmentId
-				           FROM   Reports AS r
+				           FROM Reports AS r
 				           INNER JOIN Categories AS c ON c.Id = r.CategoryId
 				           WHERE r.Id = @reportId)
 
