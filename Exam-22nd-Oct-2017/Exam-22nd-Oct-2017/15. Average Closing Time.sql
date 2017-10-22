@@ -1,5 +1,4 @@
-SELECT 
-		d.[Name] AS [Department Name], 
+SELECT	d.[Name] AS [Department Name], 
 		ISNULL(CONVERT(VARCHAR(10), AVG(DATEDIFF(day, r.OpenDate, r.CloseDate))), 'no info') AS [Average Duration]
 FROM Departments AS d
 INNER JOIN Categories AS c ON c.DepartmentId = d.Id
