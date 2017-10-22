@@ -16,7 +16,7 @@ SELECT  c.[Name] AS [Category Name],
 					      FROM CTE_FilteredCategories AS cte 
 					      WHERE cte.Label = 'in progress' 
 					      AND cte.[Category Name] = c.[Name]) 
-						 > 
+					      > 
 					     (SELECT COUNT(cte.[Category Name])
 					      FROM CTE_FilteredCategories AS cte 
 					      WHERE cte.Label = 'waiting' 
@@ -24,14 +24,14 @@ SELECT  c.[Name] AS [Category Name],
 					THEN 'in progress'
 
 					WHEN (SELECT COUNT(cte.[Category Name])
-						  FROM CTE_FilteredCategories AS cte 
-						  WHERE cte.Label = 'in progress' 
-						  AND cte.[Category Name] = c.[Name]) 
-						  < 
+					      FROM CTE_FilteredCategories AS cte 
+					      WHERE cte.Label = 'in progress' 
+					      AND cte.[Category Name] = c.[Name]) 
+					      < 
 						 (SELECT COUNT(cte.[Category Name])
-						  FROM CTE_FilteredCategories AS cte 
-						  WHERE cte.Label = 'waiting' 
-						  AND cte.[Category Name] = c.[Name])
+					      FROM CTE_FilteredCategories AS cte 
+					      WHERE cte.Label = 'waiting' 
+					      AND cte.[Category Name] = c.[Name])
 					THEN 'waiting'
 					ELSE 'equal'
 				END 
