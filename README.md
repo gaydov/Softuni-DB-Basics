@@ -24,5 +24,5 @@ The course covers:
 ## Exams
 
 - [Exam-19th-Feb-2017 - Bakery](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-19th-Feb-2017/Bakery)
-- [Exam-22nd-Oct-2017 - Report service](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-22nd-Oct-2017/Exam-22nd-Oct-2017)
 - [Exam-24th-April-2017 - WMS](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-24th-April-2017/Exam-24th-April-2017)
+- [Exam-22nd-Oct-2017 - Report service](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-22nd-Oct-2017/Exam-22nd-Oct-2017)
