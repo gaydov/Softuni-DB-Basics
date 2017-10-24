@@ -13,18 +13,16 @@ The course covers:
 
 ## Tasks
 
-1. [Data definitions and data types](https://github.com/gaydov/Softuni-DB-Basics/tree/master/2DataDefinitionsAndDataTypes/2DataDefinitionsAndDataTypes)
-2. [Basic CRUD](https://github.com/gaydov/Softuni-DB-Basics/tree/master/3BasicCRUD/3BasicCRUD)
-3. [Built-in functions](https://github.com/gaydov/Softuni-DB-Basics/tree/master/4Built-inFunctions/4Built-inFunctions)
-4. [Data aggregation](https://github.com/gaydov/Softuni-DB-Basics/tree/master/5DataAggregation/5DataAggregation)
-5. [Table relations](https://github.com/gaydov/Softuni-DB-Basics/tree/master/6TableRelations/6TableRelations)
-6. [Joins, subqueries, indexes and CTEs](https://github.com/gaydov/Softuni-DB-Basics/tree/master/7JoinsSubqueriesIndexesCTE/7JoinsSubqueriesIndexesCTE)
-7. [Functions, triggers and transactions](https://github.com/gaydov/Softuni-DB-Basics/tree/master/8FunctionsTriggersTransactions/8FunctionsTriggersTransactions)
+[Data definitions and data types](https://github.com/gaydov/Softuni-DB-Basics/tree/master/2DataDefinitionsAndDataTypes/2DataDefinitionsAndDataTypes)
+[Basic CRUD](https://github.com/gaydov/Softuni-DB-Basics/tree/master/3BasicCRUD/3BasicCRUD)
+[Built-in functions](https://github.com/gaydov/Softuni-DB-Basics/tree/master/4Built-inFunctions/4Built-inFunctions)
+[Data aggregation](https://github.com/gaydov/Softuni-DB-Basics/tree/master/5DataAggregation/5DataAggregation)
+[Table relations](https://github.com/gaydov/Softuni-DB-Basics/tree/master/6TableRelations/6TableRelations)
+[Joins, subqueries, indexes and CTEs](https://github.com/gaydov/Softuni-DB-Basics/tree/master/7JoinsSubqueriesIndexesCTE/7JoinsSubqueriesIndexesCTE)
+[Functions, triggers and transactions](https://github.com/gaydov/Softuni-DB-Basics/tree/master/8FunctionsTriggersTransactions/8FunctionsTriggersTransactions)
 
 ## Exams
 
 [Exam-19th-Feb-2017 - Bakery](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-19th-Feb-2017/Bakery)
 [Exam-22nd-Oct-2017 - Report service](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-22nd-Oct-2017/Exam-22nd-Oct-2017)
 [Exam-24th-April-2017 - WMS](https://github.com/gaydov/Softuni-DB-Basics/tree/master/Exam-24th-April-2017/Exam-24th-April-2017)
-
-
